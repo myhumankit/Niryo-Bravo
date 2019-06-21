@@ -53,6 +53,21 @@ def deactivate_learning_mode():
         data = {"message":"Deactivate learning mode", "error":str(e)}
         return jsonify(data)
 
+@app.route("/goto_zero.json")
+def goto_zero():
+    print "Info: Goto zero position"
+    try:
+        n.activate_learning_mode(False)
+        n.move_joints([0,0,0,0,0,0])
+        print "Goto zero position"
+        data = {"message":"Goto zero position"}
+        return jsonify(data)
+
+    except NiryoOneException as e:
+        print e
+        data = {"message":"Goto rest position", "error":str(e)}
+        return jsonify(data)
+
 @app.route("/goto_rest_position.json")
 def goto_rest_position():
     print "Info: Goto rest position"

@@ -17,6 +17,7 @@
         <h1>Bravo!</h1>
         <a href=# id=calibrate><button type="button" class="btn btn-primary">Calibrate</button></a>
         <a href=# id=goto_rest_position><button type="button" class="btn btn-primary">Goto Home</button></a>
+        <a href=# id=goto_zero><button type="button" class="btn btn-primary">Goto Zero</button></a>
         <h3>Learning mode</h3>
         <a href=# id=activate_learning_mode><button type="button" class="btn btn-success">On</button></a>
         <a href=# id=deactivate_learning_mode><button type="button" class="btn btn-danger">Off</button></a>
@@ -55,6 +56,13 @@
             });
             $('a#goto_rest_position').bind('click', function() {
                 $.getJSON('/goto_rest_position.json',
+                    function(data) {
+                        console.log(data);
+                    });
+                return false;
+            });
+            $('a#goto_zero').bind('click', function() {
+                $.getJSON('/goto_zero.json',
                     function(data) {
                         console.log(data);
                     });
