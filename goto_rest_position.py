@@ -8,7 +8,8 @@ n = NiryoOne()
 
 try:
     n.activate_learning_mode(False)
-    n.move_joints([0,0,0,0,0,0])
+    n.move_joints([0,0.64,-1.397,0,0,0])
+    n.activate_learning_mode(True)
     print "In rest position!"
 
 except NiryoOneException as e:
