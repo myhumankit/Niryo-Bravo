@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from niryo_one_python_api.niryo_one_api import *
 import time
 import rospy
@@ -84,6 +84,23 @@ def goto_rest_position():
         n.activate_learning_mode(False)
         n.move_joints([0,0.64,-1.397,0,0,0])
         n.activate_learning_mode(True)
+        data = {"message":message}
+        print "[ OK ] finished !"
+        return jsonify(data)
+
+    except NiryoOneException as e:
+        print "[FAIL]"
+        print e
+        data = {"message":message, "error":str(e)}
+        return jsonify(data)
+
+@app.route('/move', methods=['GET', 'POST'])
+def move():
+    joint_1 = request.args.get('j1', type = float)
+    message="Info: Move"
+    print message
+    try:
+        n.move_joints([joint_1,0,0,0,0,0])
         data = {"message":message}
         print "[ OK ] finished !"
         return jsonify(data)

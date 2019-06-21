@@ -15,12 +15,22 @@
 <body>
     <div class="container">
         <h1>Bravo!</h1>
-        <a href=# id=calibrate><button type="button" class="btn btn-primary">Calibrate</button></a>
+        <h3>Start</h3>
+        <a href=# id=calibrate><button type="button" class="btn btn-info">Calibrate</button></a>
+        <h3>Useful positions</h3>
         <a href=# id=goto_rest_position><button type="button" class="btn btn-primary">Goto Home</button></a>
         <a href=# id=goto_zero><button type="button" class="btn btn-primary">Goto Zero</button></a>
         <h3>Learning mode</h3>
         <a href=# id=activate_learning_mode><button type="button" class="btn btn-success">On</button></a>
         <a href=# id=deactivate_learning_mode><button type="button" class="btn btn-danger">Off</button></a>
+        <h3>Movements</h3>
+        <form id="ajax_movements_form" action="" method="get">
+            <div class="form-group">
+                <label for="joint_1">Joint 1</label>
+                <input type="range" min="-3.0" max="3.0" step="0.1" class="form-control-range" id="joint_1" name="joint_1">
+            </div>
+            <a href=# id=ajax_movements_button><button type="button" class="btn btn-primary">Go</button></a>
+        </form>
 
     </div>
 
@@ -63,6 +73,15 @@
             });
             $('a#goto_zero').bind('click', function() {
                 $.getJSON('/goto_zero.json',
+                    function(data) {
+                        console.log(data);
+                    });
+                return false;
+            });
+            $('a#ajax_movements_button').bind('click', function() {
+                var j1 = $('#joint_1').val();
+                console.log(j1);
+                $.getJSON('/move?j1='+j1,
                     function(data) {
                         console.log(data);
                     });
