@@ -5,4 +5,4 @@ install:
 
 .PHONY: serve
 serve:
-	FLASK_APP=niryo.py venv/bin/flask run --host=0.0.0.0 --port=8080
+	FLASK_APP=bravo/bravo.py venv/bin/flask run --host=0.0.0.0 --port=8080
