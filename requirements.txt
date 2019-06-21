@@ -3,6 +3,7 @@ angles==1.9.11
 bondpy==1.8.3
 catkin==0.7.14
 catkin-pkg==0.4.12
+Click==7.0
 controller-manager==0.13.3
 controller-manager-msgs==0.13.3
 controller-manager-tests==0.13.3
@@ -10,6 +11,7 @@ cv-bridge==1.12.8
 diagnostic-updater==1.9.3
 docutils==0.14
 dynamic-reconfigure==1.5.50
+Flask==1.0.3
 gencpp==0.6.0
 geneus==2.2.6
 genlisp==0.4.16
@@ -17,7 +19,10 @@ genmsg==0.5.11
 gennodejs==2.0.1
 genpy==0.6.7
 interactive-markers==1.11.4
+itsdangerous==1.1.0
+Jinja2==2.10.1
 laser-geometry==1.6.4
+MarkupSafe==1.1.1
 message-filters==1.12.14
 moveit-commander==0.9.15
 moveit-ros-planning-interface==0.9.15
@@ -68,4 +73,5 @@ tf2-py==0.5.20
 tf2-ros==0.5.20
 topic-tools==1.12.14
 urdfdom-py==0.3.3
+Werkzeug==0.15.4
 xacro==1.11.3
