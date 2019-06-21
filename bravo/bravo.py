@@ -97,10 +97,15 @@ def goto_rest_position():
 @app.route('/move', methods=['GET', 'POST'])
 def move():
     joint_1 = request.args.get('j1', type = float)
+    joint_2 = request.args.get('j2', type = float)
+    joint_3 = request.args.get('j3', type = float)
+    joint_4 = request.args.get('j4', type = float)
+    joint_5 = request.args.get('j5', type = float)
+    joint_6 = request.args.get('j6', type = float)
     message="Info: Move"
     print message
     try:
-        n.move_joints([joint_1,0,0,0,0,0])
+        n.move_joints([joint_1,joint_2,joint_3,joint_4,joint_5,joint_6])
         data = {"message":message}
         print "[ OK ] finished !"
         return jsonify(data)

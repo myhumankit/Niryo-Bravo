@@ -27,7 +27,22 @@
         <form id="ajax_movements_form" action="" method="get">
             <div class="form-group">
                 <label for="joint_1">Joint 1</label>
-                <input type="range" min="-3.0" max="3.0" step="0.1" class="form-control-range" id="joint_1" name="joint_1">
+                <input type="range" min="-3.05" max="3.05" step="0.01" value ="0.0" class="form-control-range" id="joint_1" name="joint_1">
+
+                <label for="joint_2">Joint 2</label>
+                <input type="range" min="-1.91" max="0.64" step="0.01" value ="0.0" class="form-control-range" id="joint_2" name="joint_2">
+
+                <label for="joint_3">Joint 3</label>
+                <input type="range" min="-1.39" max="1.57" step="0.01" value ="0.0" class="form-control-range" id="joint_3" name="joint_3">
+
+                <label for="joint_4">Joint 4</label>
+                <input type="range" min="-3.05" max="3.05" step="0.01" value ="0.0" class="form-control-range" id="joint_4" name="joint_4">
+
+                <label for="joint_5">Joint 5</label>
+                <input type="range" min="-1.74" max="1.91" step="0.01" value ="0.0" class="form-control-range" id="joint_5" name="joint_5">
+
+                <label for="joint_6">Joint 6</label>
+                <input type="range" min="-2.57" max="2.57" step="0.01" value ="0.0" class="form-control-range" id="joint_6" name="joint_6">
             </div>
             <a href=# id=ajax_movements_button><button type="button" class="btn btn-primary">Go</button></a>
         </form>
@@ -80,8 +95,13 @@
             });
             $('a#ajax_movements_button').bind('click', function() {
                 var j1 = $('#joint_1').val();
+                var j2 = $('#joint_2').val();
+                var j3 = $('#joint_3').val();
+                var j4 = $('#joint_4').val();
+                var j5 = $('#joint_5').val();
+                var j6 = $('#joint_6').val();
                 console.log(j1);
-                $.getJSON('/move?j1='+j1,
+                $.getJSON('/move?j1='+j1+'&j2='+j2+'&j3='+j3+'&j4='+j4+'&j5='+j5+'&j6='+j6,
                     function(data) {
                         console.log(data);
                     });
