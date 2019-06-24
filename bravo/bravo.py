@@ -107,7 +107,7 @@ def move():
     try:
         n.move_joints([joint_1,joint_2,joint_3,joint_4,joint_5,joint_6])
         pos = n.joints
-        data = {"message":message, pos:pos}
+        data = {"message":message, "pos":pos}
         print "[ OK ] finished !"
         return jsonify(data)
 
