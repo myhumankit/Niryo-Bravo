@@ -32,8 +32,24 @@ To run the application locally in a development environment:
 $ make serve
 ```
 
-### Usage
-Just visit [http://0.0.0.0:8080](http://0.0.0.0:8080) with a web browser to command the robot!
+### Usage (Linux)
+Lauch a terminal and connect to the Niryo (default password: _robotics_):
+```
+$ ssh niryo@192.168.1.139
+```
+
+Then, lauch the web server:
+```
+$ cd dev/Niryo-Bravo/
+$ make serve
+```
+
+In another terminal, lauch the webcam server :
+```
+$ motion
+```
+
+Just visit [http://192.168.1.139:8080](http://192.168.1.139:8080) with a web browser to command the robot!
 
 ## Tech/framework used
  * [Flask](http://flask.pocoo.org/)
