@@ -31,7 +31,7 @@ pluginlib==1.11.3
 pyparsing==2.4.0
 python-dateutil==2.8.0
 python-qt-binding==0.3.4
-PyYAML==5.1.1
+PyYAML==5.4
 qt-gui==0.3.11
 resource-retriever==1.12.4
 robot-upstart==0.3.0
