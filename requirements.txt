@@ -73,5 +73,5 @@ tf2-py==0.5.20
 tf2-ros==0.5.20
 topic-tools==1.12.14
 urdfdom-py==0.3.3
-Werkzeug==0.15.4
+Werkzeug==0.15.5
 xacro==1.11.3
